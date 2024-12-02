@@ -27,15 +27,15 @@ const Navbar = ({ userType }) => {
         </Typography>
         {userType === 'admin' && (
           <>
-            <Button color="inherit" href="/admin/employees">
+            <Button color="inherit" href="./employees">
               Employees
             </Button>
-            <Button color="inherit" href="/admin/add-job">
+            <Button color="inherit" href="./addjob">
               Add Job
             </Button>
           </>
         )}
-        <Button color="inherit" onClick={handleLogout}>
+        <Button color="inherit" onClick={() => handleLogout()}>
           Logout
         </Button>
       </Toolbar>

@@ -13,14 +13,17 @@ import { checkAuthStatus } from './redux/actions/authActions';
 // Private Route Component
 const PrivateRoute = ({ children, allowedRoles }) => {
   const { isAuthenticated, user } = useSelector(state => state.auth);
-  
-  if (!isAuthenticated) {
-    return <Navigate to="/login" />;
-  }
 
-  if (allowedRoles && !allowedRoles.includes(user?.type)) {
-    return <Navigate to="/login" />;
-  }
+  console.log('isAuthenticated:', isAuthenticated, 'user:', user);
+  
+  
+  // if (!isAuthenticated) {
+  //   return <Navigate to="/login" />;
+  // }
+
+  // if (allowedRoles && !allowedRoles.includes(user?.type)) {
+  //   return <Navigate to="/login" />;
+  // }
 
   return children;
 };
